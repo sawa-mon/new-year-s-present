@@ -7,7 +7,7 @@ import {
 import { connectRouter, routerMiddleware } from "connected-react-router"; //routerのモジュールをインポート
 import thunk from "redux-thunk";
 
-// import { UsersReducer } from "../users/reducers";
+import { YearsReducer } from "../years/reducers";
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
@@ -16,7 +16,7 @@ export default function createStore(history) {
   return reduxCreateStore(
     combineReducers({
       router: connectRouter(history), //historyが持っている情報をreduxのstoreのrouterのStateで管理できるようにする
-      // users: UsersReducer,
+      years: YearsReducer,
     }),
     composeEnhancers(
       //DevToolsの使用用
