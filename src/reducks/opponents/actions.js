@@ -1,12 +1,10 @@
-export const FETCH_YEAR = "FETCH_YEAR";
-export const fetchYearsAction = (year) => {
+export const FETCH_OPPONENT = "FETCH_OPPONENT";
+export const fetchOpponentsAction = (opponentsData) => {
   return {
-    type: "FETCH_YEAR",
+    type: "FETCH_OPPONENT",
     payload: {
-      year: year.year,
-      month: year.month,
-      day: year.day,
-      week: year.week,
+      name: opponentsData.name,
+      birthdayYear: opponentsData.birthdayYear,
     },
   };
 };

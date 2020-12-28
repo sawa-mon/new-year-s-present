@@ -1,8 +1,12 @@
 import { createSelector } from "reselect";
 
-const YearsSelector = (state) => state.years;
+const OpponentsSelector = (state) => state.opponents;
 
-export const getYearNumber = createSelector(
-  [YearsSelector],
+export const getOpponentsName = createSelector(
+  [OpponentsSelector],
   (state) => state.name
+);
+export const getOpponentsBirthdayYear = createSelector(
+  [OpponentsSelector],
+  (state) => state.birthdayYear
 );

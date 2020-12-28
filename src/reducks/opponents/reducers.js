@@ -1,9 +1,9 @@
 import * as Actions from "./actions";
-import initialState from "../Store/intialState";
+import initialState from "../store/intialState";
 
-export const YearsReducer = (state = initialState.year, action) => {
+export const OpponentsReducer = (state = initialState.opponents, action) => {
   switch (action.type) {
-    case Actions.FETCH_YEAR:
+    case Actions.FETCH_OPPONENT:
       return {
         ...state,
         ...action.payload,
