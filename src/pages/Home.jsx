@@ -1,12 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router";
 import initialState from "../reducks/store/intialState";
-import { saveAge } from "../reducks/opponents/oparations";
-import { useDispatch } from "react-redux";
 
 export const Home = () => {
   const history = useHistory();
-  const dispatch = useDispatch();
   const years = initialState.years;
   const yearsMoniter = `西暦${years.year}年${years.month}月${years.day}日`;
 
@@ -28,9 +25,9 @@ export const Home = () => {
 
   const newYearTime = `
   ${Math.abs(years.day - 31)}日と
-  ${Math.abs(times.hour - 24)}時間
-  ${Math.abs(times.minit - 60)}分
-  ${Math.abs(times.second - 60)}秒`;
+  ${Math.abs(times.hour - 23)}時間
+  ${Math.abs(times.minit - 59)}分
+  ${Math.abs(times.second - 59)}秒`;
 
   return (
     <div>
@@ -46,8 +43,7 @@ export const Home = () => {
       <p>それぞれの金額を見る</p>
       <button
         onClick={() => {
-          history.push("/presents");
-          // dispatch(saveAge());
+          history.push("/presentsview");
         }}
       >
         {years.year + 1}
@@ -55,7 +51,7 @@ export const Home = () => {
       </button>
       <button
         onClick={() => {
-          history.push("/lastyearspresents");
+          history.push("/lastyearspresentsview");
         }}
       >
         {years.year}年1月のお年玉の金額を確認する
