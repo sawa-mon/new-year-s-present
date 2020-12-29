@@ -1,16 +1,19 @@
 import React from "react";
 import { useHistory } from "react-router";
 import { LastYearsPresents } from "../components/Uikit/LastYearsPresents";
-import { Presents } from "../components/Uikit/Presents";
 
-export const Comparisons = () => {
+export const LastYearsPresentsView = () => {
   const history = useHistory();
   return (
     <div>
-      <div>Comparisons</div>
-      <button onClick={() => history.push("/")}>HomePageへ</button>
+      <button
+        onClick={() => {
+          history.push("/");
+        }}
+      >
+        ホームに戻る
+      </button>
       <LastYearsPresents />
-      <Presents />
     </div>
   );
 };

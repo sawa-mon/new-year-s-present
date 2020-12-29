@@ -1,12 +1,11 @@
 import React from "react";
 import { Switch, Route } from "react-router";
-// import { Auth } from "./Auth";
 import {
   Home,
   SignIn,
-  Presents,
+  PresentsView,
   Comparisons,
-  LastYearsPresents,
+  LastYearsPresentsView,
 } from "./pages";
 
 const Router = () => {
@@ -15,8 +14,12 @@ const Router = () => {
       <Route exact path={"/signin"} component={SignIn} />
       {/* <Auth> */}
       <Route exact path={"(/)?"} component={Home} />
-      <Route exact path={"/presents"} component={Presents} />
-      <Route exact path={"/lastyearspresents"} component={LastYearsPresents} />
+      <Route exact path={"/presentsview"} component={PresentsView} />
+      <Route
+        exact
+        path={"/lastyearspresentsview"}
+        component={LastYearsPresentsView}
+      />
       <Route exact path={"/comparisons"} component={Comparisons} />
       {/* </Auth> */}
     </Switch>
