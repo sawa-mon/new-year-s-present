@@ -6,6 +6,7 @@ import {
   PresentsView,
   Comparisons,
   LastYearsPresentsView,
+  OneLastYearsPresentsView,
 } from "./pages";
 
 const Router = () => {
@@ -19,6 +20,11 @@ const Router = () => {
         exact
         path={"/lastyearspresentsview"}
         component={LastYearsPresentsView}
+      />
+      <Route
+        exact
+        path={"/onelastyearspresentsview"}
+        component={OneLastYearsPresentsView}
       />
       <Route exact path={"/comparisons"} component={Comparisons} />
       {/* </Auth> */}

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router";
 import initialState from "../reducks/store/intialState";
+import styled from "styled-components";
 
 export const Home = () => {
   const history = useHistory();
@@ -30,36 +31,77 @@ export const Home = () => {
   ${Math.abs(times.second - 59)}秒`;
 
   return (
-    <div>
-      <div>Home</div>
-      <h2>現在、{yearsMoniter}です。</h2>
+    <StyledSection>
+      <StyledYearInfo>現在、{yearsMoniter}です。</StyledYearInfo>
       {years.month === 12 && (
-        <h3>
+        <StyledInfo>
           新年まで残り{newYearTime}
           <br />
           そろそろお年玉を用意しよう
-        </h3>
+        </StyledInfo>
       )}
-      <p>それぞれの金額を見る</p>
-      <button
-        onClick={() => {
-          history.push("/presentsview");
-        }}
-      >
-        {years.year + 1}
-        年1月のお年玉の金額を確認する
-      </button>
-      <button
-        onClick={() => {
-          history.push("/lastyearspresentsview");
-        }}
-      >
-        {years.year}年1月のお年玉の金額を確認する
-      </button>
-      <button onClick={() => history.push("/comparisons")}>
-        {years.year + 1}年と{years.year}年のお年玉金額を比較する
-      </button>
-      <button onClick={() => history.push("/signin")}>確認を終了する</button>
-    </div>
+      <StyledInfo>金額を確認する</StyledInfo>
+      <Wrap>
+        <StyledButton
+          onClick={() => {
+            history.push("/presentsview");
+          }}
+        >
+          {years.year + 1}
+          年1月のお年玉の金額を確認する
+        </StyledButton>
+        <StyledButton
+          onClick={() => {
+            history.push("/lastyearspresentsview");
+          }}
+        >
+          {years.year}年1月のお年玉の金額を確認する
+        </StyledButton>
+        <StyledButton
+          onClick={() => {
+            history.push("/onelastyearspresentsview");
+          }}
+        >
+          {years.year - 1}年1月のお年玉の金額を確認する
+        </StyledButton>
+        <StyledButton onClick={() => history.push("/comparisons")}>
+          {years.year + 1}年と{years.year}年のお年玉金額を比較する
+        </StyledButton>
+        <StyledButton onClick={() => history.push("/signin")}>
+          確認を終了する
+        </StyledButton>
+      </Wrap>
+    </StyledSection>
   );
 };
+
+const StyledSection = styled.section`
+  display: grid;
+  place-items: center;
+  background: #bfbfbf;
+  height: 100vh;
+`;
+
+const StyledYearInfo = styled.h2`
+  font-size: 20px;
+`;
+const StyledInfo = styled.h3`
+  font-size: 17px;
+  text-align: center;
+`;
+
+const Wrap = styled.div`
+  display: grid;
+  place-items: center;
+  margin: 20px;
+`;
+
+const StyledButton = styled.button`
+  width: 320px;
+  height: 50px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 10px;
+  background-color: #99d8ff;
+  margin: 8px;
+`;

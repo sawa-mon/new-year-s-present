@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { db } from "../../firebase";
 import { NameView } from "./NameView";
 import { Loading } from "./Loading";
+import styled from "styled-components";
 
 export const LastYearsPresents = () => {
   const years = new Date().getFullYear();
@@ -51,6 +52,9 @@ export const LastYearsPresents = () => {
           case ryuusei.age >= 7:
             ryuusei.money = 2000;
             break;
+          case ryuusei.age <= 6:
+            ryuusei.money = 1000;
+            break;
         }
       } catch (e) {}
 
@@ -65,6 +69,9 @@ export const LastYearsPresents = () => {
             break;
           case hiyori.age >= 7:
             hiyori.money = 2000;
+            break;
+          case hiyori.age <= 6:
+            hiyori.money = 1000;
             break;
         }
       } catch (e) {}
@@ -81,6 +88,9 @@ export const LastYearsPresents = () => {
           case riina.age >= 7:
             riina.money = 2000;
             break;
+          case riina.age <= 6:
+            riina.money = 1000;
+            break;
         }
       } catch (e) {}
 
@@ -95,6 +105,9 @@ export const LastYearsPresents = () => {
             break;
           case rikuu.age >= 7:
             rikuu.money = 2000;
+            break;
+          case rikuu.age <= 6:
+            rikuu.money = 1000;
             break;
         }
       } catch (e) {}
@@ -111,6 +124,9 @@ export const LastYearsPresents = () => {
           case yuuho.age >= 7:
             yuuho.money = 2000;
             break;
+          case yuuho.age <= 6:
+            yuuho.money = 1000;
+            break;
         }
       } catch (e) {}
 
@@ -125,6 +141,9 @@ export const LastYearsPresents = () => {
             break;
           case shuugo.age >= 7:
             shuugo.money = 2000;
+            break;
+          case shuugo.age <= 6:
+            shuugo.money = 1000;
             break;
         }
       } catch (e) {}
@@ -141,6 +160,9 @@ export const LastYearsPresents = () => {
           case naho.age >= 7:
             naho.money = 2000;
             break;
+          case naho.age <= 6:
+            naho.money = 1000;
+            break;
         }
       } catch (e) {}
       setLoading(false);
@@ -155,7 +177,6 @@ export const LastYearsPresents = () => {
 
   return (
     <div>
-      <h2>{years}年のお年玉金額</h2>
       <div>
         {loading ? (
           <Loading />
@@ -173,12 +194,19 @@ export const LastYearsPresents = () => {
                 />
               ))}
             </div>
-            <div>
-              準備合計額は<strong>{sumPrice.toLocaleString()}</strong>円です。
-            </div>
+            <StyledSum>
+              {years}年の合計額は
+              <strong>{sumPrice.toLocaleString()}円</strong>
+              だよ！！
+            </StyledSum>
           </div>
         )}
       </div>
     </div>
   );
 };
+
+const StyledSum = styled.div`
+  font-size: 17.5px;
+  padding: 5px;
+`;

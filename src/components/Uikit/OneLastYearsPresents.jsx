@@ -4,7 +4,7 @@ import { NameView } from "./NameView";
 import { Loading } from "./Loading";
 import styled from "styled-components";
 
-export const Presents = () => {
+export const OneLastYearsPresents = () => {
   const years = new Date().getFullYear();
   const [loading, setLoading] = useState(true);
   const [isOppoInfos, setIsOppoInfos] = useState([
@@ -25,7 +25,7 @@ export const Presents = () => {
         setIsOppoInfos(
           snapshot.docs.map((doc) => ({
             key: doc.id,
-            age: 1 + years - Math.abs(doc.data().birthdayYear),
+            age: years - 1 - Math.abs(doc.data().birthdayYear),
             name: doc.data().name,
             birthday: doc.data().birthdayYear,
             number: doc.data().number,
@@ -195,7 +195,7 @@ export const Presents = () => {
               ))}
             </div>
             <StyledSum>
-              {years + 1}年の合計額は
+              {years - 1}年の合計額は
               <strong>{sumPrice.toLocaleString()}円</strong>
               だよ！！
             </StyledSum>
@@ -207,6 +207,6 @@ export const Presents = () => {
 };
 
 const StyledSum = styled.div`
-  font-size: 17.5px;
+  font-size: 17.4px;
   padding: 5px;
 `;
