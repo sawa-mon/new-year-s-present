@@ -78,8 +78,9 @@ export const Home = () => {
 const StyledSection = styled.section`
   display: grid;
   place-items: center;
-  background: #bfbfbf;
+  width: 350px;
   height: 100vh;
+  margin: auto;
 `;
 
 const StyledYearInfo = styled.h2`
@@ -93,7 +94,7 @@ const StyledInfo = styled.h3`
 const Wrap = styled.div`
   display: grid;
   place-items: center;
-  margin: 20px;
+  margin: 20px 0 20px 0;
 `;
 
 const StyledButton = styled.button`

@@ -49,6 +49,6 @@ const StyledYearInfo = styled.h2`
 
 const Wrap = styled.div`
   width: 300px;
-  height: 250px;
+  height: 285px;
   border-style: groove;
 `;
