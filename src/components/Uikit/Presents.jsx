@@ -197,6 +197,7 @@ export const Presents = () => {
             <StyledSum>
               {years + 1}年の合計額は
               <strong>{sumPrice.toLocaleString()}円</strong>
+              <br />
               だよ！！
             </StyledSum>
           </div>

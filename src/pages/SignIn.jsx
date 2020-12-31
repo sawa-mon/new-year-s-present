@@ -31,11 +31,14 @@ export const SignIn = () => {
 const StyledSection = styled.section`
   display: grid;
   place-items: center;
-  background: #bfbfbf;
+  width: 350px;
   height: 100vh;
+  margin: 0 auto;
 `;
 
 const StyledButton = styled.button`
+  display: grid;
+  place-items: center;
   width: 320px;
   height: 50px;
   font-size: 16px;
@@ -48,4 +51,5 @@ const StyledButton = styled.button`
 const StyledYearInfo = styled.h2`
   font-size: 20px;
   padding: 3px;
+  margin: 0;
 `;

@@ -27,8 +27,9 @@ export const PresentsView = () => {
 const StyledSection = styled.section`
   display: grid;
   place-items: center;
-  background: #bfbfbf;
+  width: 350px;
   height: 100vh;
+  margin: auto;
 `;
 
 const StyledButton = styled.button`
@@ -48,6 +49,6 @@ const StyledYearInfo = styled.h2`
 
 const Wrap = styled.div`
   width: 300px;
-  height: 250px;
+  height: 285px;
   border-style: groove;
 `;

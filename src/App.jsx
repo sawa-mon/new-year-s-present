@@ -1,6 +1,6 @@
 import React from "react";
-import "./App.css";
 import Router from "./Router";
+import "./sanitize.css";
 
 function App() {
   return (

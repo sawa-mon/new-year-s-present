@@ -40,7 +40,7 @@ const StyledYearInfo = styled.h2`
 
 const Wrap = styled.div`
   width: 300px;
-  height: 250px;
+  height: 280px;
   border-style: groove;
 `;
 
@@ -51,5 +51,5 @@ const StyledButton = styled.button`
   font-weight: bold;
   border-radius: 10px;
   background-color: #99d8ff;
-  margin: 8px;
+  margin: 10px;
 `;
