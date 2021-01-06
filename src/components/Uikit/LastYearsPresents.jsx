@@ -15,7 +15,6 @@ export const LastYearsPresents = () => {
       number: "",
     },
   ]);
-  const [allMenbers, setAllMenbers] = useState([]);
 
   useEffect(() => {
     const unSub = db
@@ -39,134 +38,24 @@ export const LastYearsPresents = () => {
   }, [years]);
 
   useEffect(() => {
+    isOppoInfos.forEach((isOppoInfo) => {
+      switch (true) {
+        case isOppoInfo.age >= 16:
+          isOppoInfo.money = 5000;
+          break;
+        case isOppoInfo.age >= 13:
+          isOppoInfo.money = 3000;
+          break;
+        case isOppoInfo.age >= 7:
+          isOppoInfo.money = 2000;
+          break;
+        case isOppoInfo.age <= 6:
+          isOppoInfo.money = 1000;
+          break;
+      }
+    });
     setTimeout(() => {
-      const ryuusei = isOppoInfos[0];
-      try {
-        switch (true) {
-          case ryuusei.age >= 16:
-            ryuusei.money = 5000;
-            break;
-          case ryuusei.age >= 13:
-            ryuusei.money = 3000;
-            break;
-          case ryuusei.age >= 7:
-            ryuusei.money = 2000;
-            break;
-          case ryuusei.age <= 6:
-            ryuusei.money = 1000;
-            break;
-        }
-      } catch (e) {}
-
-      const hiyori = isOppoInfos[1];
-      try {
-        switch (true) {
-          case hiyori.age >= 16:
-            hiyori.money = 5000;
-            break;
-          case hiyori.age >= 13:
-            hiyori.money = 3000;
-            break;
-          case hiyori.age >= 7:
-            hiyori.money = 2000;
-            break;
-          case hiyori.age <= 6:
-            hiyori.money = 1000;
-            break;
-        }
-      } catch (e) {}
-
-      const riina = isOppoInfos[2];
-      try {
-        switch (true) {
-          case riina.age >= 16:
-            riina.money = 5000;
-            break;
-          case riina.age >= 13:
-            riina.money = 3000;
-            break;
-          case riina.age >= 7:
-            riina.money = 2000;
-            break;
-          case riina.age <= 6:
-            riina.money = 1000;
-            break;
-        }
-      } catch (e) {}
-
-      const rikuu = isOppoInfos[3];
-      try {
-        switch (true) {
-          case rikuu.age >= 16:
-            rikuu.money = 5000;
-            break;
-          case rikuu.age >= 13:
-            rikuu.money = 3000;
-            break;
-          case rikuu.age >= 7:
-            rikuu.money = 2000;
-            break;
-          case rikuu.age <= 6:
-            rikuu.money = 1000;
-            break;
-        }
-      } catch (e) {}
-
-      const yuuho = isOppoInfos[4];
-      try {
-        switch (true) {
-          case yuuho.age >= 16:
-            yuuho.money = 5000;
-            break;
-          case yuuho.age >= 13:
-            yuuho.money = 3000;
-            break;
-          case yuuho.age >= 7:
-            yuuho.money = 2000;
-            break;
-          case yuuho.age <= 6:
-            yuuho.money = 1000;
-            break;
-        }
-      } catch (e) {}
-
-      const shuugo = isOppoInfos[5];
-      try {
-        switch (true) {
-          case shuugo.age >= 16:
-            shuugo.money = 5000;
-            break;
-          case shuugo.age >= 13:
-            shuugo.money = 3000;
-            break;
-          case shuugo.age >= 7:
-            shuugo.money = 2000;
-            break;
-          case shuugo.age <= 6:
-            shuugo.money = 1000;
-            break;
-        }
-      } catch (e) {}
-
-      const naho = isOppoInfos[6];
-      try {
-        switch (true) {
-          case naho.age >= 16:
-            naho.money = 5000;
-            break;
-          case naho.age >= 13:
-            naho.money = 3000;
-            break;
-          case naho.age >= 7:
-            naho.money = 2000;
-            break;
-          case naho.age <= 6:
-            naho.money = 1000;
-            break;
-        }
-      } catch (e) {}
       setLoading(false);
-      setAllMenbers(ryuusei, hiyori, riina, rikuu, yuuho, shuugo, naho);
     }, 1000);
   }, [isOppoInfos]);
 

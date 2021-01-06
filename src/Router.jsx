@@ -13,7 +13,6 @@ const Router = () => {
   return (
     <Switch>
       <Route exact path={"/signin"} component={SignIn} />
-      {/* <Auth> */}
       <Route exact path={"(/)?"} component={Home} />
       <Route exact path={"/presentsview"} component={PresentsView} />
       <Route
@@ -27,7 +26,6 @@ const Router = () => {
         component={OneLastYearsPresentsView}
       />
       <Route exact path={"/comparisons"} component={Comparisons} />
-      {/* </Auth> */}
     </Switch>
   );
 };
