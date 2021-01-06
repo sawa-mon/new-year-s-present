@@ -1,8 +1,4 @@
 const initialState = {
-  opponents: {
-    name: "",
-    birthdayYear: "",
-  },
   years: {
     year: new Date().getFullYear(),
     month: new Date().getMonth() + 1,
