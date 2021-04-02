@@ -56,7 +56,7 @@ export const OneLastYearsPresents = () => {
     });
     setTimeout(() => {
       setLoading(false);
-    }, 1000);
+    }, 800);
   }, [isOppoInfos]);
 
   const moneyValue = isOppoInfos;
